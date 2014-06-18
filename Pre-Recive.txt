@@ -1,0 +1,42 @@
+﻿*** Settings ***
+Library			Selenium2Library
+#Suite Teardown	Close Browser
+
+
+*** Variables ***
+${WMSPlus URL}    http://192.168.20.6/Test/WebAppForPC/index.php/welcome
+
+
+*** Test Cases ***
+Open Browser
+	Open Browser    ${WMSPlus URL}
+	Maximize Browser Window
+	
+	#Select From List By Index      product_qty     1
+	
+	#Click Button     f_buy
+	
+	#Wait Until Page Contains       2 ชิ้น
+	
+	#Click Element     btn-payment
+	
+	#Click Button   ซื้อทันทีไม่ต้องสมัครสมาชิก
+	
+	#Click Element     xpath=//li[@id="bill-payment"]/a
+	
+	#Click Element     bill_ktb
+	
+	#Click Element     next-btn
+	
+	Input Text                     user         nutt
+	Input Text                     password     1111
+	
+	Select From List By Index      renter       2
+	
+	Wait Until Page Contains       Food & Fine Ingredients
+	
+	Click Button                   submit
+	
+	
+	
+*** Keywords ***
